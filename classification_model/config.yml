@@ -1,0 +1,49 @@
+# Package Overview
+package_name: classification_model
+
+# Data Files
+training_data_file: train.csv
+test_data_file: test.csv
+
+# Variables
+# The variable we are attempting to predict (sale price)
+target: Survived
+
+pipeline_name: classification_model
+pipeline_save_file: classification_model_output_v
+
+
+features:
+  - Pclass
+  - Sex
+  - Fare
+  - Age
+  - SibSp
+  - Parch
+
+# set train/test split
+test_size: 0.15
+
+# to set the random seed
+random_state: 0
+
+# categorical variables with NA in train set
+categorical_na_mean_group:
+  - Age
+
+categorical_na_mean_group_param:
+  - Pclass
+  - mean
+
+numerical_na_mean:
+  - Fare
+
+
+# variables to log transform
+numericals_log_vars:
+  - Fare
+
+categorical_vars:
+  - Sex
+
+

@@ -1,0 +1,47 @@
+name: run-app
+run_id: commands[0]
+env TERM: xterm-256color
+env TMPDIR: /var/folders/95/lczm9_vd3899jm27hx7pnk580000gn/T/
+env LANG: zh_TW.UTF-8
+env PATH: /Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox/test_app/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/kangchieh/opt/anaconda3/bin:/opt/anaconda3/condabin:/miniconda3/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/mysql/bin
+env PYTHONHASHSEED: 3560600391
+env PIP_DISABLE_PIP_VERSION_CHECK: 1
+env PYTHONIOENCODING: utf-8
+env PYTHONPATH: .
+env TOX_ENV_NAME: run-app
+env TOX_WORK_DIR: /Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox
+env TOX_ENV_DIR: /Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox/test_app
+env VIRTUAL_ENV: /Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox/test_app
+env COLUMNS: 204
+env LINES: 61
+metadata pid: 63277
+cwd: /Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api
+allow: /Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox/test_app/bin/*
+cmd: python app/main.py
+exit_code: -15
+[32mINFO[0m:     ::1:61053 - "[1mPOST /api/v1/predict HTTP/1.1[0m" [31m422 Unprocessable Entity[0m
+[32mINFO[0m:     ::1:61243 - "[1mGET / HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     ::1:61243 - "[1mGET /docs HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     ::1:61243 - "[1mGET /api/v1/openapi.json HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     ::1:61308 - "[1mPOST /api/v1/predict HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     ::1:61399 - "[1mPOST /api/v1/predict HTTP/1.1[0m" [31m422 Unprocessable Entity[0m
+
+standard error:
+[32m2023-02-02 15:14:14.703[0m | [33m[1mWARNING [0m | [36m__main__[0m:[36m<module>[0m:[36m55[0m - [33m[1mRunning in development mode. Do not run like this in production.[0m
+[32mINFO[0m:     Started server process [[36m63277[0m]
+[32mINFO[0m:     Waiting for application startup.
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     Uvicorn running on [1mhttp://localhost:8001[0m (Press CTRL+C to quit)
+[32m2023-02-02 15:14:48.028[0m | [1mINFO    [0m | [36mapp.api[0m:[36mpredict[0m:[36m43[0m - [1mMaking prediction on inputs: [TitanicDataInputSchema(PassengerId=892, Pclass=3, Sex='male', Fare=7.8292, Age=34.5, SibSp=0, Parch=0, Name='Kelly, Mr. James', Ticket='330911', Cabin='s', Embarked='Q')][0m
+[32m2023-02-02 15:14:48.056[0m | [1mINFO    [0m | [36mapp.api[0m:[36mpredict[0m:[36m50[0m - [1mPrediction results: [0][0m
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Finished server process [[36m63277[0m]
+[31mERROR[0m:    Traceback (most recent call last):
+  File "/Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox/test_app/lib/python3.9/site-packages/starlette/routing.py", line 674, in lifespan
+    await receive()
+  File "/Users/kangchieh/Documents/GitHub/mlops_practice/titanic-api/.tox/test_app/lib/python3.9/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/queues.py", line 166, in get
+    await getter
+asyncio.exceptions.CancelledError
+
